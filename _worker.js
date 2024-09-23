@@ -3334,19 +3334,8 @@ async function buildWorkerLessConfig(env, client) {
     delete fakeOutbound.streamSettings.sockopt;
     fakeOutbound.streamSettings.wsSettings.path = '/';
 
-    let fragConfig = structuredClone(xrayConfigTemp);
-    fragConfig.remarks  = '🐓 WorkerLess Config'
-    fragConfig.dns = await buildXrayDNSObject('https://cloudflare-dns.com/dns-query', localDNS, blockAds, bypassIran, bypassChina, blockPorn, true);
-    fragConfig.outbounds[0].settings.domainStrategy = 'UseIP';
-    fragConfig.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
-    fragConfig.outbounds[0].settings.fragment.interval = `${intervalMin}-${intervalMax}`;
+    
     fragConfig.outbounds = [
-        {...fragConfig.outbounds[0]}, 
-        {...fakeOutbound}, 
-        {...fragConfig.outbounds[1]}, 
-        {...fragConfig.outbounds[2]}, 
-        {...fragConfig.outbounds[3]}
-    ];
     fragConfig.routing.rules = buildXrayRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, bypassChina, blockUDP443, false, false, true);
     delete fragConfig.routing.balancers;
     delete fragConfig.observatory;
