@@ -1116,7 +1116,7 @@ function generateRemark(index, port, protocol, fragType) {
     switch (index) {
         case 0:
         case 1:
-            remark = `⇢${protocol}${type} ⇢Ðoϻɑiͷ  ${index + 1} ⇢${port}`;
+            remark = `⇢${protocol}${type} ⇢@cloudflareiran  ${index + 1} ⇢${port}`;
             break;
         case 2:
         case 3:
