@@ -3561,7 +3561,7 @@ async function getFragmentConfigs(env, hostName, client) {
     }
 
     let bestFragment = structuredClone(xrayConfigTemp);
-    bestFragment.remarks = '★ Fragment Best Values';
+    bestFragment.remarks = '★ پیشنهادی@cloudflareiran';
     bestFragment.dns = await buildXrayDNSObject(remoteDNS, localDNS, blockAds, bypassIran, bypassChina, blockPorn, false);
     bestFragment.outbounds.splice(0,1);
     bestFragValues.forEach( (fragLength, index) => {
