@@ -1120,14 +1120,14 @@ function generateRemark(index, port, protocol, fragType) {
             break;
         case 2:
         case 3:
-            remark = `⇢${protocol}${type} ⇢IPV4 ${index - 1} ⇢${port}`;
+            remark = `⇢${protocol}${type} ⇢@cloudflareiran ${index - 1} ⇢${port}`;
             break;
         case 4:
         case 5:
-            remark = `⇢${protocol}${type} ⇢IPV6 ${index - 3} ⇢${port}`;
+            remark = `⇢${protocol}${type} ⇢@cloudflareiran ${index - 3} ⇢${port}`;
             break;
         default:
-            remark = `⇢${protocol}${type} ⇢CLEAN IP ${index - 5} ⇢${port}`;
+            remark = `⇢${protocol}${type} ⇢@cloudflareiran ${index - 5} ⇢${port}`;
             break;
     }
 
