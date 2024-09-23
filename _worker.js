@@ -1110,24 +1110,24 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
  * @returns {string}
  */
 
-function generateRemark(index, port, protocol, fragType) {
+function generateRemark( ) {
     let remark = '';
     const type = fragType ? ' ⇢F' : '';
     switch (index) {
         case 0:
         case 1:
-            remark = `⇢${protocol}${type} ⇢@cloudflareiran  ${index + 1} ⇢${port}`;
+            remark = `⇢@cloudflareiran `;
             break;
         case 2:
         case 3:
-            remark = `⇢ ⇢@cloudflareiran `;
+            remark = `⇢@cloudflareiran `;
             break;
         case 4:
         case 5:
-            remark = `⇢${protocol}${type} ⇢@cloudflareiran ${index - 3} ⇢${port}`;
+            remark = `⇢@cloudflareiran `;
             break;
         default:
-            remark = `⇢${protocol}${type} ⇢@cloudflareiran ${index - 5} ⇢${port}`;
+            remark = `⇢@cloudflareiran `;
             break;
     }
 
